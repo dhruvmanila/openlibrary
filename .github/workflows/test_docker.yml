@@ -11,7 +11,7 @@ jobs:
       - run: docker-compose down
 
       - run: PYENV_VERSION=3.8.6 docker-compose up -d
-      - run: docker-compose exec -T home make test
+      - run: docker-compose exec -T home cd /opt/openlibrary/vendor/infogami && git rebase origin master && make test
       - run: docker-compose down
 
       - run: PYENV_VERSION=3.9.0 docker-compose up -d
