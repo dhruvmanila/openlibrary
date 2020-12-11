@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       # - run: docker-compose build
       - run: docker-compose up -d
-      - run: docker-compose exec home make test
+      - run: docker-compose exec -t home make test
       - run: docker-compose down
       - run: docker system prune --force
